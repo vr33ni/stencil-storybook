@@ -46,7 +46,10 @@ npm test
 
 ## Using the components
 
-There are three strategies we recommend for using web components built with Stencil.
+
+## Contact
+
+<!-- There are three strategies we recommend for using web components built with Stencil.
 
 The first step for all three of these strategies is to [publish to NPM](https://docs.npmjs.com/getting-started/publishing-npm-packages).
 
@@ -63,4 +66,4 @@ The first step for all three of these strategies is to [publish to NPM](https://
 ### In a stencil-starter app
 - Run `npm install my-component --save`
 - Add an import to the npm packages `import my-component;`
-- Then you can use the element anywhere in your template, JSX, html etc
+- Then you can use the element anywhere in your template, JSX, html etc -->
