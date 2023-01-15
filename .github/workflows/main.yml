@@ -1,4 +1,4 @@
-name: Deploy Stencil Web components Library to NPM
+name: Deploy Stencil component library to NPM
 
 on:
   pull_request:
