@@ -1,0 +1,57 @@
+:host {
+  display: block;
+}
+
+.button {
+  display: inline-block;
+  padding: 10px 15px;
+  text-align: center;
+  text-decoration: none;
+  vertical-align: middle;
+  user-select: none;
+  border: 1px solid rgba(0, 0, 0, 0);
+  font-size: 1rem;
+  transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+}
+
+
+.button.button--size-s {
+  font-size: 12px;
+  padding: none;
+}
+
+/* Variants */
+.button--variant-primary {
+  text-align: center;
+  // border-radius: var(--radius);
+  background: green;
+  color: white;
+  border-color: black;
+}
+
+.button--variant-outline-primary {
+  background-color: white;
+  color: black;
+  border-color: green;
+}
+
+.button--variant-secondary {
+  text-align: center;
+   background-color: red;
+  color: white;
+  border-color:black;
+}
+
+.button--variant-outline-secondary {
+  background-color: white;
+  color: black;
+  border-color: red;
+}
+
+.button--disabled {
+  border: 1px solid #999999;
+  background-color: #cccccc;
+  color: #666666;
+  cursor: not-allowed;
+}
+
