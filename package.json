@@ -19,13 +19,16 @@
     "loader/"
   ],
   "scripts": {
-    "build": "stencil build --docs",
+    "build-stencil": "stencil build --docs",
     "build-on-change": "stencil build --watch",
+    "build-docs": "node utils/createMdStories.js",
+    "build": "yarn build-docs && yarn stencil build --docs && yarn build-storybook",
     "start": "stencil build --dev --watch --serve",
     "test": "stencil test --spec --e2e",
     "test.watch": "stencil test --spec --e2e --watchAll",
     "generate": "stencil generate",
     "storybook": "start-storybook -p 6006",
+    "storybook-prepare": "npm run bundle && npm run build",
     "storybook-start": "concurrently -r yarn:watch-*",
     "storybook-build": "stencil build --docs && build-storybook",
     "bundle-css": "sass --load-path=node_modules --style=compressed --no-source-map .storybook/index.scss dist/index.css",
