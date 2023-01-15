@@ -30,14 +30,14 @@ jobs:
         with:
           node-version: 16
           registry-url: "https://registry.npmjs.org"
-          # cache: 'npm'
-          # cache-dependency-path: package-lock.json
+          cache: 'npm'
+          cache-dependency-path: package-lock.json
 
       - name: Create Release # releasing as a npm package
         env:
           NODE_AUTH_TOKEN: ${{ secrets.GH_TOKEN }}
         run: |
-          npm install
+          npm ci
           npm run bundle
           auto shipit
       # - name: Npm Publish # takes version number from package.json, canary releases will not be published to NPM
