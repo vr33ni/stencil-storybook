@@ -30,14 +30,14 @@
     "test.watch": "stencil test --spec --e2e --watchAll",
     "generate": "stencil generate",
     "storybook": "storybook dev -p 6006",
-    "storybook-prepare": "npm run bundle && export NODE_OPTIONS=--openssl-legacy-provider npm run build",
+    "storybook-prepare": "npm run bundle && npm run build",
     "storybook-start": "concurrently -r yarn:watch-*",
-    "storybook-build": "stencil build --docs && export NODE_OPTIONS=--openssl-legacy-provider && storybook build",
+    "storybook-build": "stencil build --docs && storybook build",
     "bundle-css": "sass --load-path=node_modules --style=compressed --no-source-map .storybook/index.scss dist/index.css",
     "watch-docs": "chokidar \"*.md\" -c \"yarn build-docs\" --initial",
     "watch-css": "chokidar \"src/**/*.scss\" -c \"yarn bundle-css\" --initial",
     "bundle-assets": "copyfiles -u 1 ./public/* dist && copyfiles -u 1 ./public/**/* dist",
-    "bundle-ts": "export NODE_OPTIONS=--openssl-legacy-provider && stencil build --docs",
+    "bundle-ts": "stencil build --docs",
     "bundle": "rimraf ./dist && npm run bundle-css && npm run bundle-ts && npm run bundle-assets"
   },
   "dependencies": {
