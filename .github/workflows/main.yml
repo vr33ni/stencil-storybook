@@ -25,11 +25,7 @@ jobs:
       - name: download + setup auto
         uses: auto-it/setup-auto@v1
 
-      - name: Use Node.js 18.x
-        uses: actions/setup-node@v1
-        with:
-          node-version: 18
-          registry-url: "https://registry.npmjs.org"
+      - name: Install dependencies
         run: |
           if [ -e yarn.lock ]; then
           yarn install --frozen-lockfile
@@ -38,6 +34,14 @@ jobs:
           else
           npm i
           fi
+      - name: Use Node.js 18.x
+        uses: actions/setup-node@v1
+        with:
+          node-version: 18
+          registry-url: "https://registry.npmjs.org"
+          cache: 'npm'
+          cache-dependency-path: package-lock.json
+
       - name: Create Release # releasing as a npm package
         env:
           NODE_AUTH_TOKEN: ${{ secrets.GH_TOKEN }}
