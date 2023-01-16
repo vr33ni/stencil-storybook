@@ -30,8 +30,14 @@ jobs:
         with:
           node-version: 18
           registry-url: "https://registry.npmjs.org"
-      
-
+      - run: |
+          if [ -e yarn.lock ]; then
+          yarn install --frozen-lockfile
+          elif [ -e package-lock.json ]; then
+          npm ci
+          else
+          npm i
+          fi
       - name: Create Release # releasing as a npm package
         env:
           NODE_AUTH_TOKEN: ${{ secrets.GH_TOKEN }}
