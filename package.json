@@ -37,7 +37,7 @@
     "watch-docs": "chokidar \"*.md\" -c \"yarn build-docs\" --initial",
     "watch-css": "chokidar \"src/**/*.scss\" -c \"yarn bundle-css\" --initial",
     "bundle-assets": "copyfiles -u 1 ./public/* dist && copyfiles -u 1 ./public/**/* dist",
-    "bundle-ts": "stencil build --docs",
+    "bundle-ts": "export NODE_OPTIONS=--openssl-legacy-provider && stencil build --docs",
     "bundle": "rimraf ./dist && npm run bundle-css && npm run bundle-ts && npm run bundle-assets"
   },
   "dependencies": {
