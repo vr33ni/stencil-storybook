@@ -1,7 +1,7 @@
 /* eslint-disable global-require, import/no-dynamic-require */
 const fs = require('fs-extra');
 const glob = require('fast-glob');
-const template = require('./resources/templates/Markdown.story.mdx');
+const template = require('./templates/Markdown.story.mdx');
 
 const parseEmojis = (value) => {
   const emojisArray = toArray(value);
